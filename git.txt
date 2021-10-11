@@ -1,0 +1,44 @@
+Git diff
+======
+-	git diff - show unstaged changes only
+-	git diff HEAD - both staged and unstaged changes since last commit
+-	git diff HEAD HEAD~1 - changes between HEAD and prior commit (HEAD-1)
+-	git diff --staged - show staged changes only
+-	git diff [filename] - changes for specific file
+-	git diff branch1..branch2 - changes between two branches
+-	git diff commit1..commit2 - changes between two commits
+
+Git stash
+=====
+Stashing uncommited changes so you can come back to them later, wihout making unnecessery commits.
+-	git stash - stash all uncommited changes (both staged and not staged) 
+-	git stash pop - remove most recent changes from stash and apply them
+-	git stash apply - apply whatever in the stash without removing it from stash
+-	git stash drop <stash_id> - drop stash
+-	git stash clear -remove all stashes
+-	git stash list - list all stashes
+
+Time traveling
+=====
+-	git checkout <commit_hash> - jump to commit, detach HEAD, now HEAD is referencing to particularcommit, not to the branch
+-	git checkout HEAD~1 - anotherw way to jump to commit and detach HEAD, ~1 previous commit
+
+-	git switch <branch> - reattach HEAD
+
+Discarding changes
+=====
+-	git checkout HEAD <filename> - discard changes to file, rever the file back to whatever it looked like when was last committed
+
+-	git restore <filename> - same as above, restore the file to the contents of the HEAD
+-	git restore --source HEAD~1 <filename> - restore the content of the file to its state from the commit prior to HEAD
+- 	git restore --staged <filename> - unstage file
+
+-	git reset <commit-hash> - reset repo back to specific commit (changes are still in working directory, just commit removed)
+-	git reset --hard <commit-hash> - both commit and changes removed 
+
+-	git revert <commit-hash> - same as git reset, but creates new commit with undo changes, hence saves commit history
+
+Remote
+=====
+-	git clone <URL> - clone remote repo
+
